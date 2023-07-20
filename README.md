@@ -15,5 +15,6 @@ Steps to get started:
    - Make sure you're in the project's directory
    - run command 'npm i sass'
   
-Note to Contributors: add any other steps needed to be able to run the project. This file will be included in the final project's submission.
+
+Note to Contributors: add any other steps needed to be able to run the project. 
 </pre>
