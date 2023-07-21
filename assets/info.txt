@@ -1,5 +1,0 @@
-This file was created to be able to commit an empty assets folder.
-
-This folder will include pictures and any other assets needed.
-
-Delete this file.
