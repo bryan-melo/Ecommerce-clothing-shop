@@ -78,6 +78,7 @@ $(document).ready(function(){
             }
         }
     });
+
     //product qty section
     let $qty_up = $(".qty .qty-up");
     let $qty_down = $(".qty .qty-down");
@@ -90,7 +91,7 @@ $(document).ready(function(){
           return ++oldval;
         });
       }
-    )};
+    });
 
     //click on qty down button
     $qty_down.click(function(e){
@@ -99,6 +100,5 @@ $(document).ready(function(){
           return --oldval;
         });
       }
-    )};
-
+    });
 });
