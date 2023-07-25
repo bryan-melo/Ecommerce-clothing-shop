@@ -2,14 +2,15 @@
   "name": "fashionthreads",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "Frontend/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "sass ./sass/style.scss style.css --watch"
+    "start": "sass Frontend/sass/style.scss Frontend/css/style.css --watch"
   },
   "author": "Bryan Melo, Shivansh Chhabra, and Somtochi Ezeh",
   "license": "ISC",
   "dependencies": {
-    "sass": "^1.64.0"
+    "i": "^0.3.7",
+    "sass": "^1.64.1"
   }
 }

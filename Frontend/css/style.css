@@ -1,5 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Raleway&family=Rubik&display=swap");
 /*     Sass Template     */
+/* Color Template */
+.color-primary {
+  color: #003859;
+}
+
+.color-primary-bg {
+  color: #003859;
+}
+
+.color-second {
+  color: #00A5C4;
+}
+
+.color-second-bg {
+  background: #00A5C4;
+}
+
+.color-yellow {
+  color: #FFD289;
+}
+
+.color-yellow-bg {
+  color: #FFD289;
+}
+
 /* global classes */
 button, button:focus {
   outline: none !important;
@@ -33,31 +58,6 @@ button, button:focus {
 
 .font-size-20 {
   font-size: 20px;
-}
-
-/* Color Template */
-.color-primary {
-  color: #003859;
-}
-
-.color-primary-bg {
-  color: #003859;
-}
-
-.color-second {
-  color: #00A5C4;
-}
-
-.color-second-bg {
-  background: #00A5C4;
-}
-
-.color-yellow {
-  color: #FFD289;
-}
-
-.color-yellow-bg {
-  color: #FFD289;
 }
 
 /*# sourceMappingURL=style.css.map */
