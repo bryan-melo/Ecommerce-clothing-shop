@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "i": "^0.3.7",
-    "sass": "^1.64.1"
+    "sass": "^1.64.2"
   }
 }
