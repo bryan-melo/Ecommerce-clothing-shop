@@ -4,8 +4,8 @@
 ?>
 
 <?php
-    // include _products.php file
-    include("Template/_products.php")   
+    // include _cart-template.php file
+    include("Template/_cart-template.php")   
 ?>
 
 <?php
