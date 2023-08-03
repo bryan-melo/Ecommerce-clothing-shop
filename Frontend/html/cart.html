@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FashionThreads</title>
+  <title>FT - Cart</title>
 
   <!-- Bootstrap CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -36,8 +36,8 @@
     <div class="strip d-flex justify-content-between px-4 py-1 bg-light">
       <p class="font-rale font-size-12 text-black-50 m-0"> </p>
       <div class="font-rale font-size-14">
-        <a href="#" class="px-3 border-right border-left text-dark">Login</a>
-        <a href="#" class="px-3 border-right text-dark">Create Account</a>
+        <a href="login.html" class="px-3 border-right border-left text-dark">Login</a>
+        <a href="signup.html" class="px-3 border-right text-dark">Create Account</a>
       </div>
     </div>
 
@@ -51,20 +51,11 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav m-auto font-rubik">
           <li class="nav-item active">
-            <a class="nav-link" href="#banner_image_men">Men</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#banner_image_women">Women</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#banner_image_kids">Kids</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#banner_image_accessories">Accessories</a>
+            <a class="nav-link" href="/Frontend/html/index.html">Home</a>
           </li>
         </ul>
         <form action="#" class="font-size-14 p-3">
-          <a href="#" class="py-2 rounded-pill bg-primary">
+          <a href="cart.html" class="py-2 rounded-pill bg-primary">
             <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
             <span class="px-3 py-2 rounded-pill text-dark bg-light">0</span>
           </a>
@@ -87,7 +78,7 @@
             <!-- cart items-->
             <div class="row border-top py-3 mt-3">
               <div class="col-sm-2">
-                <img src="/assets/Products/men/image1.png" style="height: 120px;" alt="cart1" class="img-fluid">
+                <a href="product.html"><img src="/assets/Products/men/image1.png" style="height: 120px;" alt="cart1" class="img-fluid"></a>
               </div>
               <div class="col-sm-8">
                 <h5 class="font-baloo font-size-20">Men's Leather Jacket</h5>
@@ -129,7 +120,7 @@
             <!-- cart item -->
             <div class="row border-top py-3 mt-3">
               <div class="col-sm-2">
-                <img src="/assets/Products/men/image2.png" style="height: 120px;" alt="cart1" class="img-fluid">
+                <a href="product.html"><img src="/assets/Products/men/image2.png" style="height: 120px;" alt="cart1" class="img-fluid"></a>
               </div>
               <div class="col-sm-8">
                 <h5 class="font-baloo font-size-20">Mens Jogger Pants | White</h5>
@@ -150,9 +141,9 @@
                 <!-- product qty -->
                 <div class="qty d-flex pt-2">
                   <div class="d-flex font-rale w-25">
-                    <button class="qty-up border bg-light"><i class="fas fa-angle-up"></i></button>
-                    <input type="text" class="qty_input border px-2 w-100 bg-light" disabled value="1" placeholder="1">
-                    <button class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
+                    <button class="qty-up border bg-light" data-id="pro2"><i class="fas fa-angle-up"></i></button>
+                    <input type="text" data-id="pro2" class="qty_input border px-2 w-100 bg-light" disabled value="1" placeholder="1">
+                    <button data-id="pro2" class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
                   </div>
                   <button type="submit" class="btn font-baloo text-danger px-3 border-right">Delete</button>
                   <button type="submit" class="btn font-baloo text-danger">Save for Later</button>
