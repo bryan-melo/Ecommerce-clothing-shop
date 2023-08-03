@@ -2,7 +2,7 @@
   "name": "fashionthreads",
   "version": "1.0.0",
   "description": "",
-  "main": "Frontend/index.js",
+  "main": "Frontend/html/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "sass Frontend/sass/style.scss Frontend/css/style.css --watch"
