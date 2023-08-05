@@ -1,6 +1,9 @@
+USE clothes;
+
 -- phpMyAdmin SQL
 -- version 8.1
 -- https://www.phpmyadmin.net/
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -18,9 +21,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cart` (
-  `cart_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `item_id` int(11) NOT NULL
+  `cart_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `item_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -30,7 +33,7 @@ CREATE TABLE `cart` (
 --
 
 CREATE TABLE `product` (
-  `item_id` int(11) NOT NULL,
+  `item_id` int NOT NULL,
   `item_brand` varchar(200) NOT NULL,
   `item_name` varchar(255) NOT NULL,
   `item_price` double(10,2) NOT NULL,
@@ -44,31 +47,26 @@ CREATE TABLE `product` (
 
 
 INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item_image`, `item_register`) VALUES
-(1, 'COACH', 'Homme Solid Shirt', 67.00, './assets/products/image1.png', '2023-07-15 01:48:00'), 
-(2, 'Tiffany & Co.', 'Drawstring Waist Pants', 70.00, './assets/products/image2.png', '2023-07-15 01:48:00'),
-(3, 'Tiffany & Co.', 'Homme Solid Shirt & Drawstring Waist Shorts ', 84.99, './assets/products/image3.png', '2023-07-15 01:48:00'),
-(4, 'COACH', 'Zip Up Bomber Jacket', 122.49, './assets/products/image4.png', '2023-07-15 01:48:00'),
-(5, 'Omega', 'Zip Up Bomber Jacket', 70.00, './assets/products/image5.png', '2023-07-15 01:48:00'),
-(6, 'Omega', 'Striped Print Tee & Shorts', 70.00, './assets/products/image6.png', '2023-07-15 01:48:00'),
-(7, 'COACH', 'Striped Print Tee & Shorts', 84.99, './assets/products/image7.png', '2023-07-15 01:48:00'),
-(8, 'Chanel', 'Striped Print Tee & Shorts', 84.99, './assets/products/image8.png', '2023-07-15 01:48:00'),
-(9, 'Tiffany & Co.', 'Striped Print Tee & Shorts Set', 84.99, './assets/products/image9.png', '2023-07-15 01:48:00'),
-(10, 'Omega', 'Striped Print Tee & Shorts', 87.00, './assets/products/image10.png', '2023-07-15 01:48:00'),
-(11, 'COACH', 'Cut out Top', 87.00, './assets/products/image11.png', '2023-07-15 01:48:00'),
-(12, 'Omega', 'Solid Maxi Cami Dress', 70.00, './assets/products/image12.png', '2023-07-15 01:48:00'),
-(13, 'Tiffany & Co.', 'Solid Maxi Cami Dress', 67.00, './assets/products/image13.png', '2023-07-15 01:48:00'),
-(14, 'Chanel', 'Solid Waist top and Pants', 87.00, './assets/products/image14.png', '2023-07-15 01:48:00'),
-(15, 'COACH', 'Cami Maxi Dress', 60.00, './assets/products/image15.png', '2023-07-15 01:48:00'),
-(16, 'Apple', 'Customized iPhone Cover', 67.00, './assets/products/image16.png', '2023-07-15 01:48:00'),
-(17, 'COACH', 'Custom Made Multi Glasses', 70.00, './assets/products/image17.png', '2023-07-15 01:48:00'),
-(18, 'Tiffany & Co.', 'Limited Edition T & C Hat', 84.99, './assets/products/image18.png', '2023-07-15 01:48:00'),
-(19, 'Omega', 'Custom Made Women Watch', 87.00, './assets/products/image19.png', '2023-07-15 01:48:00'),
-(20, 'Tiffany & Co.', 'Custom Made Men watch', 70.00, './assets/products/image20.png', '2023-07-15 01:48:00'),
-(21, 'Omega', 'Zip Up Bomber Jacket', 84.99, './assets/products/2image1.png', '2023-07-15 01:48:00'),
-(22, 'COACH', 'Men Black Pants', 152.00, './assets/products/image22.png', '2023-07-15 01:48:00'),
-(23, 'COACH', 'Men Balck Custom Made Hoodie Set', 84.99, './assets/products/image23.png', '2023-07-15 01:48:00'),
-(24, 'Tiffany & Co.', 'UniSex Square Bag ', 84.99, './assets/products/image24.png', '2023-07-15 01:48:00'),
-(25, 'COACH', 'UniSex Square Bag', 84.99, './assets/products/image23.png', '2023-07-15 01:48:00');
+(1, 'Express', 'Mens Leather Jacket', 69.99, '../assets/Products/men/image1.png', '2023-08-04 16:30:00'), 
+(2, 'Gymshark', 'Gymshark Mens Jogger Pants', 39.99, '../assets/Products/men/image2.png', '2023-08-04 16:30:00'),
+(3, 'Nike', 'NIKE Mens Jogger Pants', 49.99, '../assets/Products/men/image3.png', '2023-08-04 16:30:00'),
+(4, 'Shein', 'Brown Top & Bottoms', 59.99, '../assets/Products/men/image4.png', '2023-08-04 16:30:00'),
+(5, 'Omega', 'Streetwear Jacket', 49.99, '../assets/Products/men/image5.png', '2023-08-04 16:30:00'),
+(6, 'Omega', 'Womens Navy & Tan Crop Top', 29.99, '../assets/Products/women/image1.png', '2023-08-04 16:30:00'),
+(7, 'COACH', 'Womens Dress', 49.99, '../assets/Products/women/image2.png', '2023-08-04 16:30:00'),
+(8, 'Chanel', 'Womens Short Sleeve Top & Pants', 54.99, '../assets/Products/women/image3.png', '2023-08-04 16:30:00'),
+(9, 'Shein', 'Womens Dress | White w/Black Accents', 19.99, '../assets/Products/women/image4.png', '2023-08-04 16:30:00'),
+(10, 'Omega', 'Womens Elegant Dress', 49.99, '../assets/Products/women/image5.png', '2023-08-04 16:30:00'),
+(11, 'Carters', 'Kids Graphic Shirt & Shorts', 29.99, '../assets/Products/kids/image1.png', '2023-08-04 16:30:00'),
+(12, 'Carters', 'Kids Blue & Black Outfit', 29.99, '../assets/Products/kids/image2.png', '2023-08-04 16:30:00'),
+(13, 'Carters', 'Kids Black & Red Outfit', 29.99, '../assets/Products/kids/image3.png', '2023-08-04 16:30:00'),
+(14, 'Carters', 'Kids White & Green Outfit', 29.99, '../assets/Products/kids/image4.png', '2023-08-04 16:30:00'),
+(15, 'Carters', 'Kids Light Blue Dress', 19.99, '../assets/Products/kids/image5.png', '2023-08-04 16:30:00'),
+(16, 'COACH', 'Oversized Glasses', 14.99, '../assets/Products/accessories/image1.png', '2023-08-04 16:30:00'),
+(17, 'Apple', 'iPhone 11 | 12 | 13 Phone Case', 19.99, '../assets/Products/accessories/image2.png', '2023-08-04 16:30:00'),
+(18, 'Lids', 'New York Hat | Tan', 19.99, '../assets/Products/accessories/image3.png', '2023-08-04 16:30:00'),
+(19, 'Omega', 'Yellow Watch w/Bird Design', 24.99, '../assets/Products/accessories/image4.png', '2023-08-04 16:30:00'),
+(20, 'Tiffany & Co.', 'Custom Made Men watch', 70.00, '../assets/Products/accessories/image5.png', '2023-08-04 16:30:00');
 
 -- --------------------------------------------------------
 
@@ -77,7 +75,7 @@ INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item
 --
 
 CREATE TABLE `user` (
-  `user_id` int(11) NOT NULL,
+  `user_id` int NOT NULL,
   `first_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
   `register_date` datetime DEFAULT NULL
@@ -99,9 +97,9 @@ INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `register_date`) VALUE
 --
 
 CREATE TABLE `wishlist` (
-  `cart_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `item_id` int(11) NOT NULL
+  `cart_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `item_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
@@ -127,17 +125,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `item_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;

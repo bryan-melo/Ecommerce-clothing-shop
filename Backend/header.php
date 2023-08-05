@@ -19,6 +19,12 @@
 
     <!-- Custome CSS file -->
     <link rel="stylesheet" href="/Frontend/css/style.css">
+
+    <?php
+        // require functions.php file
+        require ("functions.php");
+    ?>
+
 </head>
 
 <body>
