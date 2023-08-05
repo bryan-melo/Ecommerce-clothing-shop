@@ -5,7 +5,7 @@ class DBController
     protected $port = 3306;
     protected $socket = "";
     protected $user = "root";
-    protected $password = "";
+    protected $password = "abcd1234";
     protected $dbname = "clothes";
     public $con = null; // Database connection property
 

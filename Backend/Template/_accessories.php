@@ -23,7 +23,7 @@
 
             <div class="item" py-2>
                 <div class="product font-rale">
-                    <a href="product.html"><img src="<?php echo $item['item_image'] ?? "../assets/Products/accessories/image1.png" ?>" alt="product1" class="img-fluid"></a>
+                    <a href="/Backend/product.php"><img src="<?php echo $item['item_image'] ?? "../assets/Products/accessories/image1.png" ?>" alt="product1" class="img-fluid"></a>
                     <div class="text-center py-2">
                         <h6><?php echo $item['item_name'] ?? "Unknown" ?></h6>
                         <div class="rating text-warning font-size-12">
