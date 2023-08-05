@@ -1,3 +1,7 @@
+<?php
+    $products = $product->getData();
+?>
+
 <!-- Banner Image Men -->
 <section id="banner_image_men">
     <div class="container py-5 text-center">
@@ -13,11 +17,15 @@
         <hr>
         <!-- owl carousel -->
         <div class="owl-carousel owl-theme">
+
+            <?php foreach($products as $item) { 
+                if ($item['item_id'] >= 1 && $item['item_id'] <= 5) { ?> 
+
             <div class="item" py-2>
                 <div class="product font-rale">
-                    <a href="product.html"><img src="/assets/Products/men/image1.png" alt="product1" class="img-fluid"></a>
+                    <a href="product.html"><img src="<?php echo $item['item_image'] ?? "../assets/Products/men/image1.png" ?>" alt="product1" class="img-fluid"></a>
                     <div class="text-center py-2">
-                        <h6>Men's Premium Jacket</h6>
+                        <h6><?php echo $item['item_name'] ?? "Unknown" ?></h6>
                         <div class="rating text-warning font-size-12">
                             <span><i class="fas fa-star"></i></span>
                             <span><i class="fas fa-star"></i></span>
@@ -26,88 +34,15 @@
                             <span><i class="fas fa-star"></i></span>
                         </div>
                         <div class="price py-2">
-                            <span>$49.99</span>
+                            <span>$<?php echo $item['item_price'] ?? '0' ?></span>
                         </div>
                         <button type="submit" class="btn btn-warning font-size-12">Add to Cart</button>
                     </div>
                 </div>
             </div>
-            <div class="item" py-2>
-                <div class="product font-rale">
-                    <a href="product.html"><img src="/assets/Products/men/image2.png" alt="product1" class="img-fluid"></a>
-                    <div class="text-center py-2">
-                        <h6>Men's Jogger Pants | Tan</h6>
-                        <div class="rating text-warning font-size-12">
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                        </div>
-                        <div class="price py-2">
-                            <span>$29.99</span>
-                        </div>
-                        <button type="submit" class="btn btn-warning font-size-12">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="item" py-2>
-                <div class="product font-rale">
-                    <a href="product.html"><img src="/assets/Products/men/image3.png" alt="product1" class="img-fluid"></a>
-                    <div class="text-center py-2">
-                        <h6>Men's Jogger Pants | Black</h6>
-                        <div class="rating text-warning font-size-12">
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                        </div>
-                        <div class="price py-2">
-                            <span>$29.99</span>
-                        </div>
-                        <button type="submit" class="btn btn-warning font-size-12">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="item" py-2>
-                <div class="product font-rale">
-                    <a href="product.html"><img src="/assets/Products/men/image4.png" alt="product1" class="img-fluid"></a>
-                    <div class="text-center py-2">
-                        <h6>Men's Top & Shorts Outfit</h6>
-                        <div class="rating text-warning font-size-12">
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                        </div>
-                        <div class="price py-2">
-                            <span>$69.99</span>
-                        </div>
-                        <button type="submit" class="btn btn-warning font-size-12">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="item" py-2>
-                <div class="product font-rale">
-                    <a href="product.html"><img src="/assets/Products/men/image5.png" alt="product1" class="img-fluid"></a>
-                    <div class="text-center py-2">
-                        <h6>Men's Streetwear Jacket</h6>
-                        <div class="rating text-warning font-size-12">
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                        </div>
-                        <div class="price py-2">
-                            <span>$39.99</span>
-                        </div>
-                        <button type="submit" class="btn btn-warning font-size-12">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
+
+            <?php }} // closing foreach ?>
+            
         </div>
         <!-- !owl carousel -->
     </div>
