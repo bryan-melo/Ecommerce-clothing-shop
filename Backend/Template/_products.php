@@ -1,6 +1,7 @@
  <!--  product -->
  <?php
   $item_id = $_GET['item_id'] ?? 1;
+  
   foreach ($product->getData() as $item) :
     if ($item['item_id'] == $item_id) :
   ?>
@@ -13,14 +14,14 @@
              <img src="<?php echo $item['item_image'] ?? "../assets/Products/men/image1.png" ?>" alt="product" class="img-fluid">
              <div class="form-row pt-4 font-size-16 font-baloo">
                <div class="col">
-                 <button type="submit" class="btn btn-danger form-control">Proceed to Buy</button>
+                 <button type="submit" class="btn btn-danger form-control" style="width: 95%;">Proceed to Buy</button>
                </div>
-               <div class="col">
-                 <button type="submit" class="btn btn-warning form-control">Add to Cart</button>
+               <div class="col" style="padding-top: 5px;">
+                 <button type="submit" class="btn btn-warning form-control" style="width: 95%;">Add to Cart</button>
                </div>
              </div>
            </div>
-           <!-- Product Image & Buy Buttons -->
+           <!-- !Product Image & Buy Buttons -->
 
            <div class="col-sm-6 py-5">
              <!--- Product Name -->
@@ -39,7 +40,7 @@
                <a href="#" class="px-2 font-rale font-size-16">20,324 ratings</a>
              </div>
              <hr class="m-1">
-             <!-- Product Brand & Ratings -->
+             <!-- !Product Brand & Ratings -->
 
              <!-- Product Price -->
              <table class="d-flex justify-content-between my-3" style="padding-top: 10px;">
@@ -49,7 +50,7 @@
                  </td>
                </tr>
              </table>
-             <!--- Product Price -->
+             <!--- !Product Price -->
 
              <!-- Product Colors -->
              <div class="row">
@@ -63,7 +64,7 @@
                    </div>
                  </div>
                </div>
-               <!-- Product Color -->
+               <!-- !Product Color -->
 
                <!-- Product Size -->
                <div class="size my-3">
@@ -80,9 +81,9 @@
                    </div>
                  </div>
                </div>
-               <!-- Product Size -->
+               <!-- !Product Size -->
 
-               <!-- Product qty section -->
+               <!-- Product Qty -->
                <div class="col-6" style="padding-top: 20px; padding-bottom: 50px;">
                  <div class="qty d-flex">
                    <h6 class="font-baloo" style="padding-top: 10px; font-size: 14pt;">Qty:</h6>
@@ -94,7 +95,7 @@
                  </div>
                </div>
              </div>
-             <!-- Product qty section -->
+             <!-- !Product Qty -->
 
              <!-- Product Description -->
              <div class="col-12">
@@ -111,11 +112,11 @@
                  voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
              </div>
-             <!-- Product Description -->
+             <!-- !Product Description -->
 
              <hr>
 
-             <!--- #policy -->
+             <!--- Policy -->
              <div id="policy">
                <div class="d-flex">
                  <div class="return text-center m-2" style="padding-left: 5%;">
@@ -130,21 +131,23 @@
                    </div>
                    <a href="#" class="font-rale font-size-12">1-year<br>Warranty</a>
                  </div>
+
                  <!--- Order-details-->
                  <div id="order-details" class="font-rale d-flex flex-column text-dark" style="padding-left: 30%; padding-top: 12%; font-size: 13pt;">
                    <small>Delivery by: April 15 - April 20 </small>
                    <small><i class="fas fa-map-marker-alt solor-primary"></i>&nbsp;&nbsp;Deliver to Customer -42320</small>
                  </div>
-                 <!--- Order-details-->
+                 <!--- !Order-details-->
+
                </div>
              </div>
-             <!--- #policy -->
+             <!--- !Policy -->
 
            </div>
          </div>
        </div>
      </section>
-     <!--  !product -->
+     <!--  !Product -->
 
  <?php
     endif;
