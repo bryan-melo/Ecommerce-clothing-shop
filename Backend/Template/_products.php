@@ -3,12 +3,14 @@
 $item_id = $_GET['item_id'] ?? 1;
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
   if (isset($_POST['product_submit'])) {
     if (isset($_SESSION["user_id"])) {
       $user_id = $_SESSION["user_id"];
     } else {
       // Handle the case where the user is not logged in
-      // For example, redirect to a login page or show an error message
+      header("Location: /Backend/login.php");
+      exit();
     }
 
     $item_id = isset($_POST['item_id']) ? intval($_POST['item_id']) : 0;
@@ -41,7 +43,7 @@ foreach ($product->getData() as $item):
                 <form method="post">
                   <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
                   <?php
-                  if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [])) {
+                  if (in_array($item['item_id'], $Cart->getCartId($product->getDataForUserCart('cart')) ?? [])) {
                     echo '<button type="submit" disabled class="btn btn-success font-size-16 form-control" style="width: 95%;">In the Cart</button>';
                   } else {
                     echo '<button type="submit" name="product_submit" class="btn btn-warning font-size-16 form-control" style="width: 95%;">Add to Cart</button>';
@@ -118,8 +120,8 @@ foreach ($product->getData() as $item):
                   </div>
                 </div>
               </div>
+              <!-- !Product Size -->
             </div>
-            <!-- !Product Size -->
 
             <!-- Product Description -->
             <div class="col-12 mt-5">

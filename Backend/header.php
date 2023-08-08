@@ -59,11 +59,11 @@
                 <?php
                 if (isset($_SESSION["user_id"])) {
                     // User is logged in, show Logout link
-                    echo '<a href="/Backend/Template/_logout.php" class="px-3 border-right border-left text-dark">Logout</a>';
+                    echo '<a href="/Backend/Template/_logout.php" class="px-3 border-right border-left text-danger">Logout</a>';
                 } else {
                     // User is not logged in, show Login and Create Account links
-                    echo '<a href="/Backend/login.php" class="px-3 border-right border-left text-dark">Login</a>';
-                    echo '<a href="/Backend/createAccount.php" class="px-3 border-right text-dark">Create Account</a>';
+                    echo '<a href="/Backend/login.php" class="px-3 border-right border-left text-success">Login</a>';
+                    echo '<a href="/Backend/createAccount.php" class="px-3 border-right text-success">Create Account</a>';
                 }
                 ?>
             </div>
@@ -96,7 +96,7 @@
                 <a href="/Backend/cart.php" class="py-2 rounded-pill bg-primary">
                     <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
                     <span class="px-3 py-2 rounded-pill text-dark bg-light">
-                        <?php echo count($product->getData('cart')); ?>
+                        <?php echo count($product->getDataForUserCart('cart')); ?>
                     </span>
                 </a>
             </form>

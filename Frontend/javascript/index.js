@@ -147,14 +147,15 @@ $(document).ready(function () {
     });
 });
 
+// Item Size 
+const button1 = document.getElementById("clickButton1");
+const button2 = document.getElementById("clickButton2");
+const button3 = document.getElementById("clickButton3");
+
+let prevClickedDiv = null;
 
 function buttonClick(event) {
-    // Item Size 
-    const button1 = document.getElementById("clickButton1");
-    const button2 = document.getElementById("clickButton2");
-    const button3 = document.getElementById("clickButton3");
 
-    let prevClickedDiv = null;
 
     // Add click event listeners to the buttons
     button1.addEventListener("click", buttonClick);

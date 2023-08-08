@@ -26,7 +26,7 @@ class Account
         if ($result) {
             $user = mysqli_fetch_assoc($result);
             if ($user && password_verify($password, $user["password"])) {
-                session_start();
+           
                 $_SESSION["user_id"] = $user["user_id"];
                 // Redirect to logged-in page
                 header("Location: ../Backend/index.php");

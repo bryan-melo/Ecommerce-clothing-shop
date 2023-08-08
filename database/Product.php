@@ -17,8 +17,7 @@ class Product
         $this->db = $db;
     }
 
-
-    // Fetches all product data from a specified table using the getData method.
+    // Fetches all product data from product table using the getData method.
     public function getData($table = 'product')
     {
         $result = $this->db->con->query("SELECT * FROM {$table}");
@@ -32,6 +31,32 @@ class Product
 
         return $resultArray;
     }
+
+    public function getDataForUserCart($table = 'product')
+    {
+        // Check if user is logged in
+        if (!isset($_SESSION["user_id"])) {
+            return array(); // Return an empty array if user is not logged in
+        }
+
+        // Get the user's user_id from the session
+        $user_id = $_SESSION["user_id"];
+
+        // Construct the SQL query with a WHERE clause to filter by user_id
+        $query = "SELECT * FROM {$table} WHERE user_id = $user_id";
+        $result = $this->db->con->query($query);
+
+        $resultArray = array();
+
+        // Fetch product data one by one and add them to the result array
+        while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            $resultArray[] = $item;
+        }
+
+        return $resultArray;
+    }
+
+
 
     // Gets product data based on the provided item_id and table.
     public function getProduct($item_id = null, $table = 'product')
