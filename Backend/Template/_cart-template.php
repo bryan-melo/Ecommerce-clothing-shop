@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="col-sm-9">
 
                 <?php
-                foreach ($product->getData('cart') as $item) :
+                foreach ($product->getDataForUserCart('cart') as $item) :
                     $cart = $product->getProduct($item['item_id']);
                     $cartTotal[] = array_map(function ($item) {
                 ?>
@@ -78,13 +78,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <!-- subtotal section -->
             <div class="col-sm-3" style="padding-left: 50px;">
                 <div class="sub-total border text-center mt-2">
-                    <h6 class="font-size-12 font-rale text-success py-3"><i class="fas fa-check"></i> Your order is
-                        eligible
-                        for FREE Delivery.</h6>
                     <div class="border-top py-4">
                         <h5 class="font-baloo font-size-20">Subtotal (
                             <?php
-                            $itemCount = count($product->getData('cart'));
+                            $itemCount = count($product->getDataForUserCart('cart'));
                             echo $itemCount;
                             if ($itemCount > 1) {
                                 print(" items");

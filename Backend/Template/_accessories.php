@@ -46,7 +46,7 @@
                                     <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
                                     <input type="hidden" name="user_id" value="<?php echo 1; ?>">
                                     <?php
-                                    if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [])) {
+                                    if (in_array($item['item_id'], $Cart->getCartId($product->getDataForUserCart('cart')) ?? [])) {
                                         echo '<button type="submit" disabled class="btn btn-success font-size-12">In Cart</button>';
                                     }
                                     ?>
