@@ -1,31 +1,25 @@
 <!--  product -->
 <?php
-
 $item_id = $_GET['item_id'] ?? 1;
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
   if (isset($_POST['product_submit'])) {
-    $user_id = isset($_POST['user_id']) ? intval($_POST['user_id']) : 0;
+    if (isset($_SESSION["user_id"])) {
+      $user_id = $_SESSION["user_id"];
+    } else {
+      // Handle the case where the user is not logged in
+      // For example, redirect to a login page or show an error message
+    }
+
     $item_id = isset($_POST['item_id']) ? intval($_POST['item_id']) : 0;
 
-    // Validate user input
-    if ($user_id <= 0 || $item_id <= 0) {
-      // Handle invalid input
-      echo print("unsuccesllful");
-      // Provide feedback to the user
-    } else {
-      // Check authorization, if needed
+    $Cart->addToCart($user_id, $item_id);
 
-      // Call method addToCart with validated data
-      $Cart->addToCart($user_id, $item_id);
-
-      /// Redirect to prevent form resubmission on page refresh
-      header("Location: {$_SERVER['REQUEST_URI']}");
-      exit();
-    }
+    // Redirect to prevent form resubmission on page refresh
+    header("Location: {$_SERVER['REQUEST_URI']}");
+    exit();
   }
 }
-
 
 foreach ($product->getData() as $item):
 
@@ -44,11 +38,8 @@ foreach ($product->getData() as $item):
                 <button type="submit" class="btn btn-danger form-control" style="width: 95%;">Proceed to Buy</button>
               </div>
               <div class="col" style="padding-top: 5px;">
-
-
                 <form method="post">
                   <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
-                  <input type="hidden" name="user_id" value="<?php echo 1; ?>">
                   <?php
                   if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [])) {
                     echo '<button type="submit" disabled class="btn btn-success font-size-16 form-control" style="width: 95%;">In the Cart</button>';
@@ -105,7 +96,8 @@ foreach ($product->getData() as $item):
                     <h6 class="font-baloo" style="padding-top: 10px; font-size: 14pt;">Color:</h6>
                     <div class="p-2 color-yellow-bg rounded-circle"
                       style="background-color: <?php echo $item['item_color'] ?? "color-yellow-bg" ?>; margin-right: 175px;">
-                      <button class="btn font-size 14"></button></div>
+                      <button class="btn font-size 14"></button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -116,13 +108,13 @@ foreach ($product->getData() as $item):
                 <div class="d-flex justify-content-between w-50">
                   <h6 class="font-baloo" style="padding-top: 10px; padding-right: 15px; font-size: 14pt;">Size:</h6>
                   <div class="font-rubik border p-2">
-                    <button id="clickButton1" class="btn p-0 font-size-12" onclick="buttonClick()">Small</button>
+                    <button id="clickButton1" class="btn p-0 font-size-12" onclick="buttonClick(event)">Small</button>
                   </div>
                   <div class="font-rubik border p-2">
-                    <button id="clickButton2" class="btn p-0 font-size-12" onclick="buttonClick()">Medium</button>
+                    <button id="clickButton2" class="btn p-0 font-size-12" onclick="buttonClick(event)">Medium</button>
                   </div>
                   <div class="font-rubik border p-2">
-                    <button id="clickButton3" class="btn p-0 font-size-12" onclick="buttonClick()">Large</button>
+                    <button id="clickButton3" class="btn p-0 font-size-12" onclick="buttonClick(event)">Large</button>
                   </div>
                 </div>
               </div>

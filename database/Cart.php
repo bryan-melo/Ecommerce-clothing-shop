@@ -41,7 +41,7 @@ class Cart
         if (isset($userid) && isset($itemid)) {
             $params = array(
                 "user_id" => $userid,
-                "item_id" => $itemid,
+                "item_id" => $itemid
             );
 
             // insert data into cart

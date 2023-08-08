@@ -145,36 +145,62 @@ $(document).ready(function () {
             }
         });
     });
+});
 
+
+function buttonClick(event) {
     // Item Size 
-
     const button1 = document.getElementById("clickButton1");
     const button2 = document.getElementById("clickButton2");
     const button3 = document.getElementById("clickButton3");
-    
-    let prevClickedDiv = null; // To keep track of the previously clicked button
+
+    let prevClickedDiv = null;
 
     // Add click event listeners to the buttons
     button1.addEventListener("click", buttonClick);
     button2.addEventListener("click", buttonClick);
     button3.addEventListener("click", buttonClick);
 
-    // JavaScript function that will be called when a button is clicked
-    function buttonClick(event) {
-        const div = event.target.parentElement;
 
-        // Reset background color of the previously clicked div
-        if (prevClickedDiv) {
-            prevClickedDiv.style.backgroundColor = "";
-        }
+    const div = event.target.parentElement;
 
-        // Change background color of the clicked button and update prevClickedDiv
-        div.style.backgroundColor = "lightblue";
-        prevClickedDiv = div;
-
+    // Reset background color of the previously clicked div
+    if (prevClickedDiv) {
+        prevClickedDiv.style.backgroundColor = "";
     }
 
+    // Change background color of the clicked button and update prevClickedDiv
+    div.style.backgroundColor = "lightblue";
+    prevClickedDiv = div;
+}
 
-       
+function validateAccountForm() {
+    var emailInput = document.forms['createAccountForm']['email_address'].value;
+    var passwordInput = document.forms['createAccountForm']['initial_password'].value;
+    var confirmPasswordInput = document.forms['createAccountForm']['confirm_password'].value;
+    var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|COM)$/;
 
-});
+    if (!emailPattern.test(emailInput)) {
+        alert("Please enter a valid email address with the .com TLD.");
+        return false; // Prevent form submission
+    }
+
+    if (passwordInput != confirmPasswordInput) {
+        alert("Password does not match");
+        return false;
+    }
+
+    return true; // Allow form submission
+}
+
+function validateLoginForm() {
+    var emailInput = document.forms['loginForm']['email_address'].value;
+    var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|COM)$/;
+
+    if (!emailPattern.test(emailInput)) {
+        alert("Please enter a valid email address with the .com TLD.");
+        return false; // Prevent form submission
+    }
+
+    return true;
+}

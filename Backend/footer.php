@@ -3,7 +3,7 @@
 
 <!-- start #footer -->
 <footer id="footer" class="bg-dark text-white py-5">
-    <div class="container">
+    <div class="container justify-content-center me-5">
         <div class="row">
             <div class="col-lg-3 col-12" style="padding-right: 50px;">
                 <h4 class="font-rubik font-size-20">FashionThreads</h4>
@@ -13,17 +13,17 @@
                     – your one-stop destination for stylish clothing and accessories.</p>
             </div>
             <div class="col-lg-2 col-12" style="padding-left: 50px; padding-right: 50px;">
-                <h4 class="font-rubik font-size-20">Newsletter</h4>
+                <h4 class="font-rubik font-size-20 ms-4 mb-3">Newsletter</h4>
                 <form class="form-row">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Email">
+                        <input type="text" class="form-contro fa-text-width" placeholder="Email">
                     </div>
                     <div class="col py-3">
-                        <button type="submit" class="btn btn-primary mb-2">Subscribe</button>
+                        <button type="submit" class="btn btn-primary mb-2 ms-4" style="width: 100%;">Subscribe</button>
                     </div>
                 </form>
             </div>
-            <div class="col-lg-2 col-12" style="padding-left: 50px; padding-right: 50px">
+            <div class="col-lg-2 col-12" style="padding-left: 100px;">
                 <h4 class="font-rubik font-size-20">Information</h4>
                 <div class="d-flex flex-column flex-wrap">
                     <a href="#" class="font-rale font-size-14 text-white-50 pb-1">About Us</a>
@@ -32,7 +32,7 @@
                     <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Terms & Condition</a>
                 </div>
             </div>
-            <div class="col-lg-2 col-12" style="padding-left: 50px; padding-right: 50px">
+            <div class="col-lg-2 col-12" style="padding-left: 100px;">
                 <h4 class="font-rubi font-size-20">Account</h4>
                 <div class="d-flex flex-column flex-wrap">
                     <a href="#" class="font-rale font-size-14 text-white-50 pb-1">My Account</a>

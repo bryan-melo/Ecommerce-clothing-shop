@@ -22,20 +22,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `user` (
   `user_id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL,  
   `first_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL, 
   `register_date` datetime DEFAULT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
---
--- Data for table `user`
---
-
-INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `register_date`) VALUES
-(1, 'Shivansh', 'Chhabra', '2020-03-28 13:07:17'),
-(2, 'Bryan', 'Melo', '2020-03-28 13:07:17'), 
-(3, 'Somtochi', 'Ezeh', '2020-03-28 13:07:17');
 
 -- --------------------------------------------------------
 
@@ -54,7 +48,6 @@ CREATE TABLE `product` (
   `item_description` text NOT NULL,
   PRIMARY KEY (`item_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
-
 
 
 --
@@ -135,7 +128,7 @@ CREATE TABLE `cart` (
   `user_id` int NOT NULL,
   `item_id` int NOT NULL,
   `item_size` varchar(10),
-  PRIMARY KEY (`cart_id`),
+  PRIMARY KEY (`cart_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

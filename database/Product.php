@@ -10,12 +10,12 @@ class Product
     // Then the constructor returns null.
 
     public function __construct(DBController $db)
-{
-    if (!isset($db->con)) {
-        throw new Exception("DB connection is not set.");
+    {
+        if (!isset($db->con)) {
+            throw new Exception("DB connection is not set.");
+        }
+        $this->db = $db;
     }
-    $this->db = $db;
-}
 
 
     // Fetches all product data from a specified table using the getData method.
@@ -48,5 +48,5 @@ class Product
 
             return $resultArray;
         }
-    }    
+    }
 }
