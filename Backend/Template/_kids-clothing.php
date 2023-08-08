@@ -1,18 +1,5 @@
-<?php
-
-$products = $product->getData();
-
-// request method post
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    if (isset($_POST['kids-clothing_submit'])) {
-        // call method addToCart
-        $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
-    }
-}
-?>
-
 <!-- Banner Image Kids -->
-<section id="banner_image_kids">
+<section id="banner_image_kids" style="margin-bottom: -60px;">
     <div class="container py-5 text-center">
         <img src="/assets/bannerImages/image3.png" alt="banner2" class="img-fluid">
     </div>
@@ -27,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <!-- owl carousel -->
         <div class="owl-carousel owl-theme">
 
-            <?php foreach ($products as $item) {
+            <?php foreach ($product->getData() as $item) {
                 if ($item['item_id'] >= 11 && $item['item_id'] <= 15) { ?>
 
                     <div class="item" py-2>
@@ -36,10 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                 <img src="<?php echo $item['item_image'] ?? "../assets/Products/kids/image1.png" ?>"
                                     alt="product1" class="img-fluid">
                             </a>
-                            <div class="text-center py-2">
-                                <h6>
+                            <div class="text-center py-2 pt-3">
+                                <h6 class="font-rubik">
                                     <?php echo $item['item_name'] ?? "Unknown" ?>
                                 </h6>
+                                <small>by
+                                    <?php echo $item['item_brand'] ?? "Unknown" ?>
+                                </small>
                                 <div class="rating text-warning font-size-12">
                                     <span><i class="fas fa-star"></i></span>
                                     <span><i class="fas fa-star"></i></span>
@@ -58,8 +48,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                     <?php
                                     if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [])) {
                                         echo '<button type="submit" disabled class="btn btn-success font-size-12">In Cart</button>';
-                                    } else {
-                                        echo '<button type="submit" name="kids-clothing_submit" class="btn btn-warning font-size-12">Add to Cart</button>';
                                     }
                                     ?>
                                 </form>
@@ -74,6 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
         <!-- !owl carousel -->
     </div>
-    <br><br><br><br><br>
+    <br><br><br>
+    <hr>
+    <br><br><br>
 </section>
 <!-- !Kid's Clothing -->

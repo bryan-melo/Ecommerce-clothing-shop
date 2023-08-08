@@ -7,7 +7,9 @@ class Cart
 
     public function __construct(DBController $db)
     {
-        if (!isset($db->con)) return null;
+        if (!isset($db->con)) {
+            throw new Exception("Invalid database connection.");
+        }
         $this->db = $db;
     }
 
@@ -39,7 +41,7 @@ class Cart
         if (isset($userid) && isset($itemid)) {
             $params = array(
                 "user_id" => $userid,
-                "item_id" => $itemid
+                "item_id" => $itemid,
             );
 
             // insert data into cart

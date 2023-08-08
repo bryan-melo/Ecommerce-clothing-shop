@@ -1,18 +1,5 @@
-<?php
-
-$products = $product->getData();
-
-// request method post
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    if (isset($_POST['mens-clothing_submit'])) {
-        // call method addToCart
-        $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
-    }
-}
-?>
-
 <!-- Banner Image Men -->
-<section id="banner_image_men">
+<section id="banner_image_men" style="margin-bottom: -60px;">
     <div class="container py-5 text-center">
         <img src="/assets/bannerImages/image1.png" alt="banner1" class="img-fluid">
     </div>
@@ -26,13 +13,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <hr>
         <!-- owl carousel -->
         <div class="owl-carousel owl-theme">
-            <?php foreach ($products as $item) {
+            <?php foreach ($product->getData() as $item) {
                 if ($item['item_id'] >= 1 && $item['item_id'] <= 5) { ?>
                     <div class="item py-2">
                         <div class="product font-rale">
-                            <a href="<?php printf('%s?item_id=%s', '/Backend/product.php', $item['item_id']) ?>"><img src="<?php echo $item['item_image'] ?? "../assets/Products/accessories/image1.png" ?>" alt="product1" class="img-fluid"></a>
-                            <div class="text-center py-2">
-                                <h6><?php echo $item['item_name'] ?? "Unknown" ?></h6>
+                            <a href="<?php printf('%s?item_id=%s', '/Backend/product.php', $item['item_id']) ?>"><img
+                                    src="<?php echo $item['item_image'] ?? "../assets/Products/accessories/image1.png" ?>"
+                                    alt="product1" class="img-fluid"></a>
+                            <div class="text-center py-2 pt-3">
+                                <h6 class="font-rubik">
+                                    <?php echo $item['item_name'] ?? "Unknown" ?>
+                                </h6>
+                                <small>by
+                                    <?php echo $item['item_brand'] ?? "Unknown" ?>
+                                </small>
                                 <div class="rating text-warning font-size-12">
                                     <span><i class="fas fa-star"></i></span>
                                     <span><i class="fas fa-star"></i></span>
@@ -41,7 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                     <span><i class="fas fa-star"></i></span>
                                 </div>
                                 <div class="price py-2">
-                                    <span>&#65284;<?php echo $item['item_price'] ?? '0' ?></span>
+                                    <span>&#65284;
+                                        <?php echo $item['item_price'] ?? '0' ?>
+                                    </span>
                                 </div>
                                 <form method="post">
                                     <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
@@ -49,8 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                     <?php
                                     if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [])) {
                                         echo '<button type="submit" disabled class="btn btn-success font-size-12">In Cart</button>';
-                                    } else {
-                                        echo '<button type="submit" name="mens-clothing_submit" class="btn btn-warning font-size-12">Add to Cart</button>';
                                     }
                                     ?>
                                 </form>
@@ -65,6 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
         <!-- !owl carousel -->
     </div>
-    <br><br><br><br><br>
+    <br><br><br>
+    <hr>
+    <br><br><br>
 </section>
 <!-- !Men's CLothing -->
