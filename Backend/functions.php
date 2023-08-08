@@ -11,6 +11,9 @@ require("../database/Product.php");
 // require Cart Class
 require("../database/Cart.php");
 
+// require Account Class
+require("../database/Account.php");
+
 
     /* Objects */
 
@@ -23,4 +26,7 @@ $products = $product->getData();
 
 // Cart object
 $Cart = new Cart($db);
+
+// Acount object
+$Account = new Account($db);
 
