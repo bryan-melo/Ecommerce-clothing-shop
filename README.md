@@ -1,8 +1,9 @@
 # finalProjectDatabaseSys
 **Contribution:**
-<br>Bryan Melo: 
-<br>Shivansh Chhabra: **Slides**, **_Backend_**: Populate MySQL datas and images, connecting it to WebApp, **_Frontend_**: Log in and Sign up 
+<br>Bryan Melo: _**Final Correction All errors, Frontend and Backend of the Project**_
 <br>Somtochi Ezeh: **ER-diagram**, **_Frontend_**: Cart, Product, Page. **_Backend_**: Log in and sign up
+<br>Shivansh Chhabra: **Slides**, **_Backend_**: Populate MySQL data and images, connecting database to WebApp, **_Frontend_**: Log in and Sign up 
+
 
 <br>_**Setup:**_
 <pre>
