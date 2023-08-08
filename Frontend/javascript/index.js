@@ -145,4 +145,36 @@ $(document).ready(function () {
             }
         });
     });
+
+    // Item Size 
+
+    const button1 = document.getElementById("clickButton1");
+    const button2 = document.getElementById("clickButton2");
+    const button3 = document.getElementById("clickButton3");
+    
+    let prevClickedDiv = null; // To keep track of the previously clicked button
+
+    // Add click event listeners to the buttons
+    button1.addEventListener("click", buttonClick);
+    button2.addEventListener("click", buttonClick);
+    button3.addEventListener("click", buttonClick);
+
+    // JavaScript function that will be called when a button is clicked
+    function buttonClick(event) {
+        const div = event.target.parentElement;
+
+        // Reset background color of the previously clicked div
+        if (prevClickedDiv) {
+            prevClickedDiv.style.backgroundColor = "";
+        }
+
+        // Change background color of the clicked button and update prevClickedDiv
+        div.style.backgroundColor = "lightblue";
+        prevClickedDiv = div;
+
+    }
+
+
+       
+
 });

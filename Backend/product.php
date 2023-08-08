@@ -5,7 +5,7 @@
 
 <?php
     // include _products.php file
-    include("Template/_products.php")   
+    include("Template/_products.php"); 
 ?>
 
 <?php
