@@ -1,4 +1,4 @@
-# finalProjectDatabaseSys
+# E-commerce Clothing Shop
 **Contribution:**
 <br>Bryan Melo: _**Final Correction All errors, Frontend and Backend of the Project**_
 <br>Somtochi Ezeh: **ER-diagram**, **_Frontend_**: Cart, Product, Page. **_Backend_**: Log in and sign up
