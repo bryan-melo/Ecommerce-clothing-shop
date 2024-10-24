@@ -7,9 +7,7 @@
 
 <br>_**Setup:**_
 <pre>
-CS 157A - Final Project
- 
-Steps to get started:
+ Steps to get started:
 -----------------------
  
 1. Clone the repository
